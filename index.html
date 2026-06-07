@@ -1,0 +1,20 @@
+Enter Your Text
+<br>
+<textarea id="inputxt" placeholder="maximum 100 characters allowed" style="width:500px;height:200px;"></textarea>
+<br>
+<span id="message" style="color:blue"></span>
+<br>
+<span id="error" style="color:red"></span>
+<script>
+    var inputxt = document.getElementById("inputxt");
+    var message = document.getElementById("message");
+    var error = document.getElementById("error");
+    inputxt.addEventListener("input",function(){
+        var count = inputxt.value.length;
+        message.textContent = 'Charactercount:'+count;
+        if(count>=100){
+            inputxt.disabled=true;
+error.textContent = 'maximum 100 characters are allowed';
+        }
+    })
+</script>
